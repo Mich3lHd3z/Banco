@@ -1,0 +1,122 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ultrasonicos"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:textAlignment="center">
+
+        <TextView
+            android:id="@+id/textView0"
+            android:layout_width="120dp"
+            android:layout_height="29dp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:text="Ultra Principal" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/btnUPE"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:text="Abrir"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:onClick="toggleUltraPrincipal" />
+
+        <Button
+            android:id="@+id/btnUPA"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:text="Cerrar"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:onClick="toggleUltraPrincipal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:textAlignment="center">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:textColor="@color/black"
+            android:layout_width="120dp"
+            android:layout_height="29dp"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:text="Ultra Pasillo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="1dp">
+
+        <Button
+            android:id="@+id/btnUPLE"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:text="Abrir"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:onClick="toggleUltraPasillo" />
+
+        <Button
+            android:id="@+id/btnUPLA"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:text="Cerrar"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:onClick="toggleUltraPasillo" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="228dp"
+
+        android:layout_marginBottom="16dp"
+        android:gravity="start|bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/regresarButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRegresarClick"
+            android:text="Regresar" />
+    </LinearLayout>
+
+</LinearLayout>

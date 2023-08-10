@@ -1,0 +1,208 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Focos"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:textAlignment="center">
+
+        <TextView
+            android:id="@+id/textView0"
+            android:layout_width="120dp"
+            android:layout_height="29dp"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:text="Foco Principal" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/btnFPE"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:text="Abrir"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:onClick="toggleFocoPrincipal" />
+
+        <Button
+            android:id="@+id/btnFPA"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:text="Cerrar"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:onClick="toggleFocoPrincipal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:textAlignment="center">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="120dp"
+            android:layout_height="29dp"
+            android:textColor="@color/black"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:text="Foco Ventanilla" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="1dp">
+
+        <Button
+            android:id="@+id/btnFVE"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:text="Abrir"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:onClick="toggleFocoVentanilla" />
+
+        <Button
+            android:id="@+id/btnFVA"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:text="Cerrar"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:onClick="toggleFocoVentanilla" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:textAlignment="center">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="120dp"
+            android:layout_height="29dp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:text="Foco Pasillo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="1dp">
+
+        <Button
+            android:id="@+id/btnFPLE"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:text="Abrir"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:onClick="toggleFocoPasillo" />
+
+        <Button
+            android:id="@+id/btnFPLA"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:text="Cerrar"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:onClick="toggleFocoPasillo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:textAlignment="center">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="120dp"
+            android:layout_height="29dp"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:text="Poste" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="1dp">
+
+        <Button
+            android:id="@+id/btnFPOE"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:text="Abrir"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:onClick="toggleFocoPoste" />
+
+        <Button
+            android:id="@+id/btnFPOA"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:text="Cerrar"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:onClick="toggleFocoPoste" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="99dp"
+
+        android:layout_marginBottom="16dp"
+        android:gravity="start|bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/regresarButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRegresarClick"
+            android:text="Regresar" />
+    </LinearLayout>
+
+</LinearLayout>
