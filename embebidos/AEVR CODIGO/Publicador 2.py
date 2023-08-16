@@ -42,7 +42,7 @@ print(f"Servidores DNS: {dns_servers}")
 ########################################
 
 # Objeto
-c = mqtt.MQTTClient("Pico02","192.168.1.70")
+c = mqtt.MQTTClient("Pico02","3.128.156.108")
 c.connect()
 
 Continuar = True
@@ -53,7 +53,7 @@ while Continuar:
     if a == 'z':
         Continuar = False
     else:
-        c.publish('demo',a)
+        c.publish('DEMO',a)
         
 c.disconnect()
 print('Fin de programa')
