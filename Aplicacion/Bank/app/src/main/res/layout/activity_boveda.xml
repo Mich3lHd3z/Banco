@@ -43,7 +43,7 @@
             android:id="@+id/btnIIOTE"
             android:layout_width="120dp"
             android:layout_height="60dp"
-            android:onClick="toggleLogBoveda"
+            android:onClick="toggleLogBoveda_Abrir"
             android:text="Abrir"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
@@ -52,7 +52,7 @@
             android:id="@+id/btnIOTA"
             android:layout_width="120dp"
             android:layout_height="60dp"
-            android:onClick="toggleLogBoveda"
+            android:onClick="toggleLogBoveda_Cerrar"
             android:text="Cerrar"
             android:textColor="@android:color/black"
             android:textSize="20sp" />

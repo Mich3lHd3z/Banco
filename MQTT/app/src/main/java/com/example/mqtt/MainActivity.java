@@ -10,7 +10,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
 
-    private static final String BROKER_URL = "tcp://3.128.156.108:1883";
+    private static final String BROKER_URL = "tcp://18.118.188.12";
     private static final String CLIENT_ID = "your_client_id";
     private MqttHandler mqttHandler;
     @Override
@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Button publishButton = findViewById(R.id.publishButton);
+        Button publishButton2 = findViewById(R.id.publishButton2);
         publishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -27,7 +28,19 @@ public class MainActivity extends AppCompatActivity {
                 mqttHandler = new MqttHandler();
                 mqttHandler.connect(BROKER_URL,CLIENT_ID);
 
-                publishMessage("DEMO","HOLA DESDE ANDROID");
+                publishMessage("DEMO","P_P_A");
+
+            }
+        });
+
+        publishButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                mqttHandler = new MqttHandler();
+                mqttHandler.connect(BROKER_URL,CLIENT_ID);
+
+                publishMessage("DEMO","BOTON2");
 
             }
         });

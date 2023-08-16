@@ -49,7 +49,7 @@ print(f"Servidores DNS: {dns_servers}")
 ########################################
 
 # Objeto
-c = mqtt.MQTTClient("Pico01","3.128.156.108")
+c = mqtt.MQTTClient("Pico01","18.118.188.12")
 
 c.set_callback(receptor)
 c.connect()
