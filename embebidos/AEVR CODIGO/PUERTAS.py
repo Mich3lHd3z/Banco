@@ -56,7 +56,7 @@ def PuertaP(angulo):
         P2.duty_u16(int(Cerrar()))
 
 def PuertaS(angulo):
-    if angulo == 'A'
+    if angulo == 'A':
         S.duty_u16(int(Abrir()))
     elif angulo == 'C':
         S.duty_u16(int(Cerrar()))
@@ -69,25 +69,25 @@ F4 = Pin(25, Pin.OUT)
 
 
 def FocoP(Ac):
-    if Ac == 'A'
+    if Ac == 'A':
         F1.value(1)
     elif Ac == 'C':
         F1.value(0)
         
 def FocoV(Ac):
-    if Ac == 'A'
+    if Ac == 'A':
         F2.value(1)
     elif Ac == 'C':
         F2.value(0)
                     
 def FocoPl(Ac):
-    if Ac == 'A'
+    if Ac == 'A':
         F3.value(1)
     elif Ac == 'C':
         F3.value(0)
                     
 def FocoPO(Ac):
-    if Ac == 'A'
+    if Ac == 'A':
         F4.value(1)
     elif Ac == 'C':
         F4.value(0)
@@ -134,7 +134,7 @@ def PsOP():
             
             elif OP == 'U':
                  if Cat == 'P':
-                    UltraP(Ac)
+                     UltraP(Ac)
                 elif Cat == 'PL':
                     UltraPL(Ac)
             
