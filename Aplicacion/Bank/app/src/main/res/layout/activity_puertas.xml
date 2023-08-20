@@ -48,7 +48,7 @@
             android:textAlignment="center"
             android:textSize="20sp"
             android:textColor="@android:color/black"
-            android:onClick="toggleBovedav1"
+            android:onClick="toggleBovedav1Abrir"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +64,7 @@
             android:textAlignment="center"
             android:textSize="20sp"
             android:textColor="@android:color/black"
-            android:onClick="toggleBovedav1C" />
+            android:onClick="toggleBovedav1Cerrar" />
     </LinearLayout>
 
     <LinearLayout
@@ -100,7 +100,7 @@
             android:textAlignment="center"
             android:textSize="20sp"
             android:textColor="@android:color/black"
-            android:onClick="togglePuerta" />
+            android:onClick="togglePuertaAbrir" />
 
         <Button
             android:id="@+id/btnV1C"
@@ -110,7 +110,7 @@
             android:textAlignment="center"
             android:textSize="20sp"
             android:textColor="@android:color/black"
-            android:onClick="togglePuerta" />
+            android:onClick="togglePuertaCerrar" />
     </LinearLayout>
 
     <LinearLayout
@@ -146,7 +146,7 @@
             android:textAlignment="center"
             android:textSize="20sp"
             android:textColor="@android:color/black"
-            android:onClick="togglePuerta" />
+            android:onClick="togglePuertaV2Abrir" />
 
         <Button
             android:id="@+id/btnV2C"
@@ -156,7 +156,7 @@
             android:textAlignment="center"
             android:textSize="20sp"
             android:textColor="@android:color/black"
-            android:onClick="togglePuerta" />
+            android:onClick="togglePuertaV2Cerrar" />
     </LinearLayout>
 
     <LinearLayout
@@ -192,7 +192,7 @@
             android:textAlignment="center"
             android:textSize="20sp"
             android:textColor="@android:color/black"
-            android:onClick="togglePuerta" />
+            android:onClick="togglePuertaPAbrir" />
 
         <Button
             android:id="@+id/btnPC"
@@ -202,7 +202,7 @@
             android:textAlignment="center"
             android:textSize="20sp"
             android:textColor="@android:color/black"
-            android:onClick="togglePuerta" />
+            android:onClick="togglePuertaPCerrar" />
     </LinearLayout>
 
     <LinearLayout
@@ -238,7 +238,7 @@
             android:textAlignment="center"
             android:textSize="20sp"
             android:textColor="@android:color/black"
-            android:onClick="togglePuerta" />
+            android:onClick="togglePuertaSAbrir" />
 
         <Button
             android:id="@+id/btnSC"
@@ -248,7 +248,7 @@
             android:textAlignment="center"
             android:textSize="20sp"
             android:textColor="@android:color/black"
-            android:onClick="togglePuerta" />
+            android:onClick="togglePuertaSCerrar" />
     </LinearLayout>
 
     <LinearLayout

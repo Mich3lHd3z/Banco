@@ -45,7 +45,7 @@
             android:text="Abrir"
             android:textSize="20sp"
             android:textColor="@android:color/black"
-            android:onClick="toggleFocoPrincipal" />
+            android:onClick="toggleFocoPrincipalAbrir" />
 
         <Button
             android:id="@+id/btnFPA"
@@ -54,7 +54,7 @@
             android:text="Cerrar"
             android:textSize="20sp"
             android:textColor="@android:color/black"
-            android:onClick="toggleFocoPrincipal" />
+            android:onClick="toggleFocoPrincipalCerrar" />
     </LinearLayout>
 
     <LinearLayout
@@ -89,7 +89,7 @@
             android:text="Abrir"
             android:textSize="20sp"
             android:textColor="@android:color/black"
-            android:onClick="toggleFocoVentanilla" />
+            android:onClick="toggleFocoVentanillaAbrir" />
 
         <Button
             android:id="@+id/btnFVA"
@@ -98,7 +98,7 @@
             android:text="Cerrar"
             android:textSize="20sp"
             android:textColor="@android:color/black"
-            android:onClick="toggleFocoVentanilla" />
+            android:onClick="toggleFocoVentanillaCerrar" />
     </LinearLayout>
 
     <LinearLayout
@@ -133,7 +133,7 @@
             android:text="Abrir"
             android:textSize="20sp"
             android:textColor="@android:color/black"
-            android:onClick="toggleFocoPasillo" />
+            android:onClick="toggleFocoPasilloAbrir" />
 
         <Button
             android:id="@+id/btnFPLA"
@@ -142,7 +142,7 @@
             android:text="Cerrar"
             android:textSize="20sp"
             android:textColor="@android:color/black"
-            android:onClick="toggleFocoPasillo" />
+            android:onClick="toggleFocoPasilloCerrar" />
     </LinearLayout>
 
     <LinearLayout
@@ -177,7 +177,7 @@
             android:text="Abrir"
             android:textSize="20sp"
             android:textColor="@android:color/black"
-            android:onClick="toggleFocoPoste" />
+            android:onClick="toggleFocoPosteAbrir" />
 
         <Button
             android:id="@+id/btnFPOA"
@@ -186,7 +186,7 @@
             android:text="Cerrar"
             android:textSize="20sp"
             android:textColor="@android:color/black"
-            android:onClick="toggleFocoPoste" />
+            android:onClick="toggleFocoPosteCerrar" />
     </LinearLayout>
 
     <LinearLayout

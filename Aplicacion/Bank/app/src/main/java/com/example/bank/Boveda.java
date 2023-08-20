@@ -40,19 +40,10 @@ public class Boveda extends AppCompatActivity {
         // Esteban Servidor Rasberry
         mqttHandler = new MqttHandler();
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
-        publishMessage("DEMO","Abrir");
+        publishMessage("DEMO","I_IOT_A");
         // Litzy Registro BD
 
 _Insert("I_IOT_A","Boveda se Abre");
-
-    }
-    public void toggleLogBoveda_Cerrar(View view) {
-        // Esteban Servidor Rasberry
-        mqttHandler = new MqttHandler();
-        mqttHandler.connect(BROKER_URL,CLIENT_ID);
-        publishMessage("DEMO","Abrir");
-
-        _Insert("I_IOT_E","Boveda se Abre");
 
     }
     public void toggleLogBoveda_Cerrar(View view) {
