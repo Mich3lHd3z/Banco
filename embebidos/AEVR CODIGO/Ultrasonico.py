@@ -25,3 +25,6 @@ while True:
     print(d,' cms')
     
     utime.sleep_ms(500)
+    
+    if (d > 10):
+        print('HOla')
