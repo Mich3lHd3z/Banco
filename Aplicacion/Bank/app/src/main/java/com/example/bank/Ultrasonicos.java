@@ -39,7 +39,7 @@ public class Ultrasonicos extends AppCompatActivity {
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","U_P_E");
         // Litzy Registro BD
-
+        subscribeToTopic("U_P_E");
         _Insert("U_P_E"," Ultra Abierta");
 
     }
@@ -47,7 +47,7 @@ public class Ultrasonicos extends AppCompatActivity {
         mqttHandler = new MqttHandler();
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","U_P_A");
-
+        subscribeToTopic("U_P_A");
         // Litzy Registro BD
         _Insert("U_P_A","Ultra Cerrada");
     }
@@ -57,7 +57,7 @@ public class Ultrasonicos extends AppCompatActivity {
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","U_PL_E");
         // Litzy Registro BD
-
+        subscribeToTopic("U_PL_E");
         _Insert("U_PL_E"," Ultra Abierta");
 
     }
@@ -65,7 +65,7 @@ public class Ultrasonicos extends AppCompatActivity {
         mqttHandler = new MqttHandler();
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","U_PL_A");
-
+        subscribeToTopic("U_PL_A");
         // Litzy Registro BD
         _Insert("U_PL_A","Ultra Cerrada");
     }

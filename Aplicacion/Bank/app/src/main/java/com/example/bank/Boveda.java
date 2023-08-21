@@ -42,7 +42,7 @@ public class Boveda extends AppCompatActivity {
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","I_IOT_E");
         // Litzy Registro BD
-
+        subscribeToTopic("I_IOT_E");
 _Insert("I_IOT_E","Boveda se Abre");
 
     }
@@ -50,7 +50,7 @@ _Insert("I_IOT_E","Boveda se Abre");
         mqttHandler = new MqttHandler();
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","I_IOT_A");
-
+        subscribeToTopic("I_IOT_A");
         // Litzy Registro BD
         _Insert("I_IOT_A","Boveda se Cerrar");
     }

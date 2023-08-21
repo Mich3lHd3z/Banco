@@ -38,7 +38,7 @@ public class Puertas extends AppCompatActivity {
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","P_B_A");
         // Litzy Registro BD
-
+        subscribeToTopic("P_B_A");
         _Insert("P_B_A"," Puerta Abierta");
 
     }
@@ -46,7 +46,7 @@ public class Puertas extends AppCompatActivity {
         mqttHandler = new MqttHandler();
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","P_B_C");
-
+        subscribeToTopic("P_B_C");
         // Litzy Registro BD
         _Insert("P_B_C","Puerta Cerrada");
     }
@@ -57,7 +57,7 @@ public class Puertas extends AppCompatActivity {
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","P_V1_A");
         // Litzy Registro BD
-
+        subscribeToTopic("P_V1_A");
         _Insert("P_V1_A"," Puerta Abierta");
 
     }
@@ -65,7 +65,7 @@ public class Puertas extends AppCompatActivity {
         mqttHandler = new MqttHandler();
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","P_V1_C");
-
+        subscribeToTopic("P_V1_C");
         // Litzy Registro BD
         _Insert("P_V1_C","Puerta Cerrada");
     }
@@ -76,7 +76,7 @@ public class Puertas extends AppCompatActivity {
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","P_V2_A");
         // Litzy Registro BD
-
+        subscribeToTopic("P_V2_A");
         _Insert("P_V2_A"," Puerta Abierta");
 
     }
@@ -84,7 +84,7 @@ public class Puertas extends AppCompatActivity {
         mqttHandler = new MqttHandler();
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","P_V2_C");
-
+        subscribeToTopic("P_V2_C");
         // Litzy Registro BD
         _Insert("P_V2_C","Puerta Cerrada");
     }
@@ -95,7 +95,7 @@ public class Puertas extends AppCompatActivity {
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","P_P_A");
         // Litzy Registro BD
-
+        subscribeToTopic("P_P_A");
         _Insert("P_P_A"," Puerta Abierta");
 
     }
@@ -103,7 +103,7 @@ public class Puertas extends AppCompatActivity {
         mqttHandler = new MqttHandler();
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","P_P_C");
-
+        subscribeToTopic("P_P_C");
         // Litzy Registro BD
         _Insert("P_P_C","Puerta Cerrada");
     }
@@ -114,7 +114,7 @@ public class Puertas extends AppCompatActivity {
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","P_S_A");
         // Litzy Registro BD
-
+        subscribeToTopic("P_S_A");
         _Insert("P_S_A"," Puerta Abierta");
 
     }
@@ -122,7 +122,7 @@ public class Puertas extends AppCompatActivity {
         mqttHandler = new MqttHandler();
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","P_S_C");
-
+        subscribeToTopic("P_S_C");
         // Litzy Registro BD
         _Insert("P_S_C","Puerta Cerrada");
     }

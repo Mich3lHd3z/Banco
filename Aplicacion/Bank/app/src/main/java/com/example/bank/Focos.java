@@ -39,7 +39,7 @@ public class Focos extends AppCompatActivity {
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","F_P_E");
         // Litzy Registro BD
-
+         subscribeToTopic("F_P_E");
         _Insert("F_P_E","Foco Encendidio");
 
     }
@@ -47,7 +47,7 @@ public class Focos extends AppCompatActivity {
         mqttHandler = new MqttHandler();
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","F_P_A");
-
+        subscribeToTopic("F_P_A");
         // Litzy Registro BD
         _Insert("F_P_A","Foco Apagado");
     }
@@ -58,7 +58,7 @@ public class Focos extends AppCompatActivity {
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","F_V_E");
         // Litzy Registro BD
-
+        subscribeToTopic("F_V_E");
         _Insert("F_V_E","Foco Encendidio");
 
     }
@@ -66,7 +66,7 @@ public class Focos extends AppCompatActivity {
         mqttHandler = new MqttHandler();
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","F_V_A");
-
+        subscribeToTopic("F_V_A");
         // Litzy Registro BD
         _Insert("F_V_A","Foco Apagado");
     }
@@ -76,7 +76,7 @@ public class Focos extends AppCompatActivity {
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","F_PL_E");
         // Litzy Registro BD
-
+        subscribeToTopic("F_PL_E");
         _Insert("F_PL_E","Foco Encendidio");
 
     }
@@ -84,7 +84,7 @@ public class Focos extends AppCompatActivity {
         mqttHandler = new MqttHandler();
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","F_PL_A");
-
+        subscribeToTopic("F_PL_A");
         // Litzy Registro BD
         _Insert("F_PL_A","Foco Apagado");
     }
@@ -95,7 +95,7 @@ public class Focos extends AppCompatActivity {
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","F_PO_E");
         // Litzy Registro BD
-
+        subscribeToTopic("F_PO_E");
         _Insert("F_PO_E","Foco Encendidio");
 
     }
@@ -103,7 +103,7 @@ public class Focos extends AppCompatActivity {
         mqttHandler = new MqttHandler();
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
         publishMessage("DEMO","F_PO_A");
-
+        subscribeToTopic("F_PO_A");
         // Litzy Registro BD
         _Insert("F_PO_A","Foco Apagado");
     }
