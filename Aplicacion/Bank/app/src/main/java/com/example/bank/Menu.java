@@ -29,7 +29,7 @@ public class Menu extends AppCompatActivity {
             }
         });
 
-        Button buttonBoveda = findViewById(R.id.buttonBoveda);
+        /*  Button buttonBoveda = findViewById(R.id.buttonBoveda);
         buttonBoveda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,7 +43,7 @@ public class Menu extends AppCompatActivity {
             public void onClick(View v) {
                 openUltrasonicos();
             }
-        });
+        }); */
 
         Button buttonFocos = findViewById(R.id.buttonFocos);
         buttonFocos.setOnClickListener(new View.OnClickListener() {

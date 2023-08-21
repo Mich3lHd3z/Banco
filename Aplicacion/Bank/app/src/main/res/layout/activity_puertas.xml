@@ -4,14 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/bank">
 
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Puertas"
-        android:textSize="24sp"
+        android:textSize="44sp"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:layout_marginBottom="16dp" />
@@ -27,10 +28,12 @@
             android:layout_width="120dp"
             android:layout_height="30dp"
             android:layout_weight="1"
+            android:textStyle="bold"
             android:text="Boveda"
             android:textColor="@color/black"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="24sp"
+             />
     </LinearLayout>
 
     <LinearLayout
@@ -43,11 +46,12 @@
         <Button
             android:id="@+id/btnPBA"
             android:layout_width="120dp"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
             android:layout_height="60dp"
             android:text="Abrir"
             android:textAlignment="center"
             android:textSize="20sp"
-            android:textColor="@android:color/black"
             android:onClick="toggleBovedav1Abrir"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -59,11 +63,12 @@
         <Button
             android:id="@+id/btnBC"
             android:layout_width="120dp"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
             android:layout_height="60dp"
             android:text="Cerrar"
             android:textAlignment="center"
             android:textSize="20sp"
-            android:textColor="@android:color/black"
             android:onClick="toggleBovedav1Cerrar" />
     </LinearLayout>
 
@@ -79,7 +84,8 @@
             android:layout_width="120dp"
             android:layout_height="29dp"
             android:layout_weight="1"
-            android:textSize="20sp"
+            android:textSize="24sp"
+            android:textStyle="bold"
             android:textColor="@color/black"
             android:textAlignment="center"
             android:text="Puerta V1" />
@@ -99,7 +105,8 @@
             android:text="Abrir"
             android:textAlignment="center"
             android:textSize="20sp"
-            android:textColor="@android:color/black"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
             android:onClick="togglePuertaAbrir" />
 
         <Button
@@ -109,7 +116,8 @@
             android:text="Cerrar"
             android:textAlignment="center"
             android:textSize="20sp"
-            android:textColor="@android:color/black"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
             android:onClick="togglePuertaCerrar" />
     </LinearLayout>
 
@@ -126,7 +134,8 @@
             android:layout_height="29dp"
             android:layout_weight="1"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="24sp"
+            android:textStyle="bold"
             android:textAlignment="center"
             android:text="Puerta V2" />
     </LinearLayout>
@@ -145,7 +154,8 @@
             android:text="Abrir"
             android:textAlignment="center"
             android:textSize="20sp"
-            android:textColor="@android:color/black"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
             android:onClick="togglePuertaV2Abrir" />
 
         <Button
@@ -155,7 +165,8 @@
             android:text="Cerrar"
             android:textAlignment="center"
             android:textSize="20sp"
-            android:textColor="@android:color/black"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
             android:onClick="togglePuertaV2Cerrar" />
     </LinearLayout>
 
@@ -171,7 +182,8 @@
             android:layout_width="120dp"
             android:layout_height="29dp"
             android:layout_weight="1"
-            android:textSize="20sp"
+            android:textSize="24sp"
+            android:textStyle="bold"
             android:textColor="@color/black"
             android:textAlignment="center"
             android:text="Puerta P" />
@@ -191,7 +203,8 @@
             android:text="Abrir"
             android:textAlignment="center"
             android:textSize="20sp"
-            android:textColor="@android:color/black"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
             android:onClick="togglePuertaPAbrir" />
 
         <Button
@@ -201,7 +214,8 @@
             android:text="Cerrar"
             android:textAlignment="center"
             android:textSize="20sp"
-            android:textColor="@android:color/black"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
             android:onClick="togglePuertaPCerrar" />
     </LinearLayout>
 
@@ -217,7 +231,8 @@
             android:layout_width="120dp"
             android:layout_height="29dp"
             android:layout_weight="1"
-            android:textSize="20sp"
+            android:textSize="24sp"
+            android:textStyle="bold"
             android:textColor="@color/black"
             android:textAlignment="center"
             android:text="Puerta S" />
@@ -237,7 +252,8 @@
             android:text="Abrir"
             android:textAlignment="center"
             android:textSize="20sp"
-            android:textColor="@android:color/black"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
             android:onClick="togglePuertaSAbrir" />
 
         <Button
@@ -247,7 +263,8 @@
             android:text="Cerrar"
             android:textAlignment="center"
             android:textSize="20sp"
-            android:textColor="@android:color/black"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
             android:onClick="togglePuertaSCerrar" />
     </LinearLayout>
 
@@ -264,6 +281,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onRegresarClick"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
             android:text="Regresar" />
     </LinearLayout>
 

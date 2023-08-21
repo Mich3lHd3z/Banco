@@ -2,7 +2,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/bank">
 
     <TextView
         android:id="@+id/titleTextView"
@@ -10,7 +11,7 @@
         android:layout_height="wrap_content"
         android:text="Focos"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="44sp"
         android:textStyle="bold"
         android:layout_marginBottom="16dp" />
 
@@ -24,9 +25,11 @@
         <TextView
             android:id="@+id/textView0"
             android:layout_width="120dp"
-            android:layout_height="29dp"
+            android:layout_height="34dp"
+            android:textStyle="bold"
+            android:textSize="25sp"
             android:layout_weight="1"
-            android:textSize="20sp"
+
             android:textAlignment="center"
             android:textColor="@color/black"
             android:text="Foco Principal" />
@@ -44,7 +47,8 @@
             android:layout_height="60dp"
             android:text="Abrir"
             android:textSize="20sp"
-            android:textColor="@android:color/black"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
             android:onClick="toggleFocoPrincipalAbrir" />
 
         <Button
@@ -53,7 +57,8 @@
             android:layout_height="60dp"
             android:text="Cerrar"
             android:textSize="20sp"
-            android:textColor="@android:color/black"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
             android:onClick="toggleFocoPrincipalCerrar" />
     </LinearLayout>
 
@@ -70,7 +75,8 @@
             android:layout_height="29dp"
             android:textColor="@color/black"
             android:layout_weight="1"
-            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textSize="25sp"
             android:textAlignment="center"
             android:text="Foco Ventanilla" />
     </LinearLayout>
@@ -88,7 +94,8 @@
             android:layout_height="60dp"
             android:text="Abrir"
             android:textSize="20sp"
-            android:textColor="@android:color/black"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
             android:onClick="toggleFocoVentanillaAbrir" />
 
         <Button
@@ -97,7 +104,8 @@
             android:layout_height="60dp"
             android:text="Cerrar"
             android:textSize="20sp"
-            android:textColor="@android:color/black"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
             android:onClick="toggleFocoVentanillaCerrar" />
     </LinearLayout>
 
@@ -114,7 +122,8 @@
             android:layout_height="29dp"
             android:layout_weight="1"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textSize="25sp"
             android:textAlignment="center"
             android:text="Foco Pasillo" />
     </LinearLayout>
@@ -132,7 +141,8 @@
             android:layout_height="60dp"
             android:text="Abrir"
             android:textSize="20sp"
-            android:textColor="@android:color/black"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
             android:onClick="toggleFocoPasilloAbrir" />
 
         <Button
@@ -141,53 +151,12 @@
             android:layout_height="60dp"
             android:text="Cerrar"
             android:textSize="20sp"
-            android:textColor="@android:color/black"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
             android:onClick="toggleFocoPasilloCerrar" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:textAlignment="center">
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="120dp"
-            android:layout_height="29dp"
-            android:layout_weight="1"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:text="Poste" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="1dp">
-
-        <Button
-            android:id="@+id/btnFPOE"
-            android:layout_width="120dp"
-            android:layout_height="60dp"
-            android:text="Abrir"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:onClick="toggleFocoPosteAbrir" />
-
-        <Button
-            android:id="@+id/btnFPOA"
-            android:layout_width="120dp"
-            android:layout_height="60dp"
-            android:text="Cerrar"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:onClick="toggleFocoPosteCerrar" />
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -202,6 +171,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onRegresarClick"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
             android:text="Regresar" />
     </LinearLayout>
 
