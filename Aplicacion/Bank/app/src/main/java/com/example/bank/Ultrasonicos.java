@@ -11,8 +11,12 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -69,31 +73,34 @@ public class Ultrasonicos extends AppCompatActivity {
         // Litzy Registro BD
         _Insert("U_PL_A","Ultra Cerrada");
     }
-    private void _Insert(final String _Clave,final String _Descripcion) {
+    private void _Insert(final String _Clave, final String _Descripcion) {
 
         String url = "https://proyectos123tra.000webhostapp.com/Banco/api.php";
 
-        StringRequest postResquest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Toast.makeText(Ultrasonicos.this, "RESULTADO POST = " + response, Toast.LENGTH_LONG).show();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("Error", error.getMessage());
-            }
-        }) {
-            protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<>();
-                params.put("Clave", _Clave);
-                params.put("Descripcion", _Descripcion);
-                return params;
-            }
-        };
-        Volley.newRequestQueue(this).add(postResquest);
-    }
+        JSONObject jsonBody = new JSONObject();
+        try {
+            jsonBody.put("Clave", _Clave);
+            jsonBody.put("Descripcion", _Descripcion);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, jsonBody,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Toast.makeText(Ultrasonicos.this, "RESULTADO POST = " + response.toString(), Toast.LENGTH_LONG).show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("Error", error.toString());
+                    }
+                });
+
+        Volley.newRequestQueue(this).add(jsonObjectRequest);
+    }
 
     @Override
     protected void onDestroy() {

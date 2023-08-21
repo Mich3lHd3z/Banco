@@ -44,7 +44,6 @@ public class Boveda extends AppCompatActivity {
         // Litzy Registro BD
         subscribeToTopic("I_IOT_E");
 _Insert("I_IOT_E","Boveda se Abre");
-        postRequestWithJsonBody();
 
     }
     public void toggleLogBoveda_Cerrar(View view) {
@@ -54,57 +53,17 @@ _Insert("I_IOT_E","Boveda se Abre");
         subscribeToTopic("I_IOT_A");
         // Litzy Registro BD
         _Insert("I_IOT_A","Boveda se Cerrar");
-        postRequestWithJsonBody();
     }
 
 
-    private void _Insert(final String _Clave,final String _Descripcion) {
+    private void _Insert(final String _Clave, final String _Descripcion) {
 
-        String url = "https://proyectos123tra.000webhostapp.com/Banco/api.php";
-
-        StringRequest postResquest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Toast.makeText(Boveda.this, "RESULTADO POST = " + response, Toast.LENGTH_LONG).show();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("Error", error.getMessage());
-            }
-        }) {
-            protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<>();
-                params.put("Clave", _Clave);
-                params.put("Descripcion", _Descripcion);
-                return params;
-            }
-        };
-        Volley.newRequestQueue(this).add(postResquest);
-    }
-
-
-    @Override
-    protected void onDestroy() {
-        mqttHandler.disconnect();
-        super.onDestroy();
-
-    }
-    private void publishMessage(String topic, String message){
-        Toast.makeText(this, "Publishing message: " + message, Toast.LENGTH_SHORT).show();
-        mqttHandler.publish(topic,message);
-    }
-    private void subscribeToTopic(String topic){
-        Toast.makeText(this, "Subscribing to topic "+ topic, Toast.LENGTH_SHORT).show();
-        mqttHandler.subscribe(topic);
-    }
-    private void postRequestWithJsonBody() {
         String url = "https://proyectos123tra.000webhostapp.com/Banco/api.php";
 
         JSONObject jsonBody = new JSONObject();
         try {
-            jsonBody.put("Clave", "I_IOT_E");
-            jsonBody.put("Descripcion", "Boveda se Abre");
+            jsonBody.put("Clave", _Clave);
+            jsonBody.put("Descripcion", _Descripcion);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -123,7 +82,23 @@ _Insert("I_IOT_E","Boveda se Abre");
                     }
                 });
 
-        // Agregar la solicitud a la cola de Volley
         Volley.newRequestQueue(this).add(jsonObjectRequest);
     }
+
+
+    @Override
+    protected void onDestroy() {
+        mqttHandler.disconnect();
+        super.onDestroy();
+
+    }
+    private void publishMessage(String topic, String message){
+        Toast.makeText(this, "Publishing message: " + message, Toast.LENGTH_SHORT).show();
+        mqttHandler.publish(topic,message);
+    }
+    private void subscribeToTopic(String topic){
+        Toast.makeText(this, "Subscribing to topic "+ topic, Toast.LENGTH_SHORT).show();
+        mqttHandler.subscribe(topic);
+    }
+
 }

@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
+import com.android.volley.*;
+import com.android.volley.toolbox.*;
+import org.json.*;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -109,30 +111,35 @@ public class Focos extends AppCompatActivity {
     }
 
 
-    private void _Insert(final String _Clave,final String _Descripcion) {
+    private void _Insert(final String _Clave, final String _Descripcion) {
 
         String url = "https://proyectos123tra.000webhostapp.com/Banco/api.php";
 
-        StringRequest postResquest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Toast.makeText(Focos.this, "RESULTADO POST = " + response, Toast.LENGTH_LONG).show();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("Error", error.getMessage());
-            }
-        }) {
-            protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<>();
-                params.put("Clave", _Clave);
-                params.put("Descripcion", _Descripcion);
-                return params;
-            }
-        };
-        Volley.newRequestQueue(this).add(postResquest);
+        JSONObject jsonBody = new JSONObject();
+        try {
+            jsonBody.put("Clave", _Clave);
+            jsonBody.put("Descripcion", _Descripcion);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, jsonBody,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Toast.makeText(Focos.this, "RESULTADO POST = " + response.toString(), Toast.LENGTH_LONG).show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("Error", error.toString());
+                    }
+                });
+
+        Volley.newRequestQueue(this).add(jsonObjectRequest);
     }
+
 
 
     @Override
