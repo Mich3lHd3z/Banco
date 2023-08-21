@@ -71,7 +71,18 @@ _Insert("I_IOT_E","Boveda se Abre");
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Toast.makeText(Boveda.this, "RESULTADO POST = " + response.toString(), Toast.LENGTH_LONG).show();
+                        try {
+                            String mensaje = response.getString("mensaje");
+                            if (mensaje.equals("Registro exitoso")) {
+                                // La inserción fue exitosa
+                                Toast.makeText(Boveda.this, "Registro exitoso", Toast.LENGTH_LONG).show();
+                            } else {
+                                // Hubo un error en la inserción
+                                Toast.makeText(Boveda.this, "Error en el registro: " + mensaje, Toast.LENGTH_LONG).show();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
                 },
                 new Response.ErrorListener() {
@@ -82,6 +93,7 @@ _Insert("I_IOT_E","Boveda se Abre");
                 });
 
         Volley.newRequestQueue(this).add(jsonObjectRequest);
+
     }
 
 
