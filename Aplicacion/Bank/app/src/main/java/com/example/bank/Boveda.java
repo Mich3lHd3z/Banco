@@ -37,22 +37,21 @@ public class Boveda extends AppCompatActivity {
 
 
     public void toggleLogBoveda_Abrir(View view) {
-        // Esteban Servidor Rasberry
         mqttHandler = new MqttHandler();
-        mqttHandler.connect(BROKER_URL,CLIENT_ID);
-        publishMessage("DEMO","I_IOT_E");
+        mqttHandler.connect(BROKER_URL, CLIENT_ID);
+        publishMessage("DEMO", "I_IOT_E");
         // Litzy Registro BD
         subscribeToTopic("I_IOT_E");
-_Insert("I_IOT_E","Boveda se Abre");
-
+        _Insert("I_IOT_E", "Boveda se Abre");
     }
+
     public void toggleLogBoveda_Cerrar(View view) {
         mqttHandler = new MqttHandler();
-        mqttHandler.connect(BROKER_URL,CLIENT_ID);
-        publishMessage("DEMO","I_IOT_A");
-        subscribeToTopic("I_IOT_A");
+        mqttHandler.connect(BROKER_URL, CLIENT_ID);
+        publishMessage("DEMO", "I_IOT_A");
         // Litzy Registro BD
-        _Insert("I_IOT_A","Boveda se Cerrar");
+        subscribeToTopic("I_IOT_A");
+        _Insert("I_IOT_A", "Boveda se Cerrar");
     }
 
     private void _Insert(final String _Clave, final String _Descripcion) {
@@ -91,21 +90,19 @@ _Insert("I_IOT_E","Boveda se Abre");
         requestQueue.add(stringrequest);
     }
 
-
-
     @Override
     protected void onDestroy() {
         mqttHandler.disconnect();
         super.onDestroy();
+    }
 
-    }
-    private void publishMessage(String topic, String message){
+    private void publishMessage(String topic, String message) {
         Toast.makeText(this, "Publishing message: " + message, Toast.LENGTH_SHORT).show();
-        mqttHandler.publish(topic,message);
+        mqttHandler.publish(topic, message);
     }
-    private void subscribeToTopic(String topic){
-        Toast.makeText(this, "Subscribing to topic "+ topic, Toast.LENGTH_SHORT).show();
+
+    private void subscribeToTopic(String topic) {
+        Toast.makeText(this, "Subscribing to topic " + topic, Toast.LENGTH_SHORT).show();
         mqttHandler.subscribe(topic);
     }
-
 }
