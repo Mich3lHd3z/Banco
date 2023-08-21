@@ -12,6 +12,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -79,7 +80,7 @@ public class Panel2 extends AppCompatActivity {
                     try {
                         JSONObject jsonObject = new JSONObject(response);
 
-                        String rol = jsonObject.getString("Rol");
+                        String rol = jsonObject.getString("Clave");
 
                     } catch (JSONException e) {
                         e.printStackTrace();
