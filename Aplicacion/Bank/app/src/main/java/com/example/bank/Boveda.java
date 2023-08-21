@@ -44,6 +44,7 @@ public class Boveda extends AppCompatActivity {
         // Litzy Registro BD
         subscribeToTopic("I_IOT_E");
 _Insert("I_IOT_E","Boveda se Abre");
+        postRequestWithJsonBody();
 
     }
     public void toggleLogBoveda_Cerrar(View view) {
@@ -53,6 +54,7 @@ _Insert("I_IOT_E","Boveda se Abre");
         subscribeToTopic("I_IOT_A");
         // Litzy Registro BD
         _Insert("I_IOT_A","Boveda se Cerrar");
+        postRequestWithJsonBody();
     }
 
 
@@ -95,5 +97,33 @@ _Insert("I_IOT_E","Boveda se Abre");
     private void subscribeToTopic(String topic){
         Toast.makeText(this, "Subscribing to topic "+ topic, Toast.LENGTH_SHORT).show();
         mqttHandler.subscribe(topic);
+    }
+    private void postRequestWithJsonBody() {
+        String url = "https://proyectos123tra.000webhostapp.com/Banco/api.php";
+
+        JSONObject jsonBody = new JSONObject();
+        try {
+            jsonBody.put("Clave", "I_IOT_E");
+            jsonBody.put("Descripcion", "Boveda se Abre");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, jsonBody,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Toast.makeText(Boveda.this, "RESULTADO POST = " + response.toString(), Toast.LENGTH_LONG).show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("Error", error.toString());
+                    }
+                });
+
+        // Agregar la solicitud a la cola de Volley
+        Volley.newRequestQueue(this).add(jsonObjectRequest);
     }
 }
