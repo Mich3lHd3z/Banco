@@ -110,7 +110,6 @@ public class Ultrasonicos extends AppCompatActivity {
                         Log.e("Error", error.toString());
                     }
                 });
-
         Volley.newRequestQueue(this).add(jsonObjectRequest);
     }
 
