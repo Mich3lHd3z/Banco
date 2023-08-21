@@ -74,6 +74,7 @@ public class Ultrasonicos extends AppCompatActivity {
         _Insert("U_PL_A","Ultra Cerrada");
     }
     private void _Insert(final String _Clave, final String _Descripcion) {
+
         String url = "https://proyectos123tra.000webhostapp.com/Banco/api.php";
 
         JSONObject jsonBody = new JSONObject();
@@ -89,13 +90,14 @@ public class Ultrasonicos extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            String mensaje = response.getString("mensaje");
-                            if (mensaje.equals("Registro exitoso")) {
+                            boolean success = response.getBoolean("success");
+                            String message = response.getString("message");
+                            if (success) {
                                 // La inserción fue exitosa
-                                Toast.makeText(Ultrasonicos.this, "Registro exitoso", Toast.LENGTH_LONG).show();
+                                Toast.makeText(Ultrasonicos.this, "Registro exitoso: " + message, Toast.LENGTH_LONG).show();
                             } else {
                                 // Hubo un error en la inserción
-                                Toast.makeText(Ultrasonicos.this, "Error en el registro: " + mensaje, Toast.LENGTH_LONG).show();
+                                Toast.makeText(Ultrasonicos.this, "Error en el registro: " + message, Toast.LENGTH_LONG).show();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -110,7 +112,6 @@ public class Ultrasonicos extends AppCompatActivity {
                 });
 
         Volley.newRequestQueue(this).add(jsonObjectRequest);
-
     }
 
     @Override

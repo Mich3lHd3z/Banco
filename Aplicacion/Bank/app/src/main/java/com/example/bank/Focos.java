@@ -122,18 +122,20 @@ public class Focos extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, jsonBody,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            String mensaje = response.getString("mensaje");
-                            if (mensaje.equals("Registro exitoso")) {
+                            boolean success = response.getBoolean("success");
+                            String message = response.getString("message");
+                            if (success) {
                                 // La inserción fue exitosa
-                                Toast.makeText(Focos.this, "Registro exitoso", Toast.LENGTH_LONG).show();
+                                Toast.makeText(Focos.this, "Registro exitoso: " + message, Toast.LENGTH_LONG).show();
                             } else {
                                 // Hubo un error en la inserción
-                                Toast.makeText(Focos.this, "Error en el registro: " + mensaje, Toast.LENGTH_LONG).show();
+                                Toast.makeText(Focos.this, "Error en el registro: " + message, Toast.LENGTH_LONG).show();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -148,8 +150,8 @@ public class Focos extends AppCompatActivity {
                 });
 
         Volley.newRequestQueue(this).add(jsonObjectRequest);
-
     }
+
 
 
 
