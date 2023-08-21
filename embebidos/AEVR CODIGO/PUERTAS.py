@@ -102,12 +102,11 @@ def PsOP():
         input_str = input('Ingrese 2 las opciones (Opcion)(_)(Categoria)(_)(Ac[A,C]) : ')
         values = input_str.split('_')
 
-        if len(values) == 2:
+        if len(values) == 3:
             OP, Cat, Ac = values
 
             print('Valores ingresados:')
-            print('OP:', OP)
-            print('Categoria:', Cat)            
+            print('OP:', OP,'Categoria:', Cat)            
             print('Accion:', Ac)
 
             if OP == 'P':
@@ -133,36 +132,42 @@ def PsOP():
                     FocoPO(Ac)
             
             elif OP == 'U':
-                 if Cat == 'P':
+                if Cat == 'P':
                      UltraP(Ac)
                 elif Cat == 'PL':
                     UltraPL(Ac)
             
             elif OP == 'I':
-                
+                 if Cat == 'IOT':
+                     if Cat == 'E':
+                         UltraP(Ac)
+                     elif Cat == 'A':
+                         UltraPL(Ac)
             
+                
         else:
             print('Error: Debe ingresar exactamente 3 valores separados por _.')
     except ValueError:
         print('Error: Ingrese exactamente 3 valores separados por _.')
 
 while True:
+    print('++++++++++++++++++++++++++++++++++++++++++++++')
     print('Opcion [P][F][U][I]')
-    
+    print('++++++++++++++++++++++++++++++++++++++++++++++')
     print('Opcion [P] Puerta')
     print('Ventanilla principal [V1]:')
     print('Ventanilla Pasillo [V2]:')
     print('Principal [P]:')
     print('Salida [S]:')
     print('Bobeda [B]:')
-    
+    print('++++++++++++++++++++++++++++++++++++++++++++++')
     print('Opcion [F] Foco')
-    
+    print('++++++++++++++++++++++++++++++++++++++++++++++')
     print('Opcion [U] Ultrasonico')
-    
+    print('++++++++++++++++++++++++++++++++++++++++++++++')
     print('Opcion [I] BOvEDA')
     print('Encender [I_IOT_E]')
     print('Apagar [I_IOT_A]')
-    
+    print('++++++++++++++++++++++++++++++++++++++++++++++')
     PsOP()
 
