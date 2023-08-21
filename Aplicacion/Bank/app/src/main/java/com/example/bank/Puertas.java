@@ -45,10 +45,10 @@ public class Puertas extends AppCompatActivity {
     public void toggleBovedav1Cerrar(View view) {
         mqttHandler = new MqttHandler();
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
-        publishMessage("DEMO","B_C");
+        publishMessage("DEMO","P_B_C");
 
         // Litzy Registro BD
-        _Insert("B_C","Puerta Cerrada");
+        _Insert("P_B_C","Puerta Cerrada");
     }
 
     public void togglePuertaAbrir(View view) {
@@ -64,10 +64,10 @@ public class Puertas extends AppCompatActivity {
     public void togglePuertaCerrar(View view) {
         mqttHandler = new MqttHandler();
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
-        publishMessage("DEMO","V1_C");
+        publishMessage("DEMO","P_V1_C");
 
         // Litzy Registro BD
-        _Insert("V1_C","Puerta Cerrada");
+        _Insert("P_V1_C","Puerta Cerrada");
     }
 
     public void togglePuertaV2Abrir(View view) {
@@ -83,10 +83,10 @@ public class Puertas extends AppCompatActivity {
     public void togglePuertaV2Cerrar(View view) {
         mqttHandler = new MqttHandler();
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
-        publishMessage("DEMO","V2_C");
+        publishMessage("DEMO","P_V2_C");
 
         // Litzy Registro BD
-        _Insert("V2_C","Puerta Cerrada");
+        _Insert("P_V2_C","Puerta Cerrada");
     }
 
     public void togglePuertaPAbrir(View view) {
@@ -102,10 +102,10 @@ public class Puertas extends AppCompatActivity {
     public void togglePuertaPCerrar(View view) {
         mqttHandler = new MqttHandler();
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
-        publishMessage("DEMO","P_C");
+        publishMessage("DEMO","P_P_C");
 
         // Litzy Registro BD
-        _Insert("P_C","Puerta Cerrada");
+        _Insert("P_P_C","Puerta Cerrada");
     }
 
     public void togglePuertaSAbrir(View view) {
@@ -121,10 +121,10 @@ public class Puertas extends AppCompatActivity {
     public void togglePuertaSCerrar(View view) {
         mqttHandler = new MqttHandler();
         mqttHandler.connect(BROKER_URL,CLIENT_ID);
-        publishMessage("DEMO","S_C");
+        publishMessage("DEMO","P_S_C");
 
         // Litzy Registro BD
-        _Insert("S_C","Puerta Cerrada");
+        _Insert("P_S_C","Puerta Cerrada");
     }
     private void _Insert(final String _Clave,final String _Descripcion) {
 
