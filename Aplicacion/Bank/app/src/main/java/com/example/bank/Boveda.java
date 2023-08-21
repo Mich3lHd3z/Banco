@@ -35,7 +35,11 @@ public class Boveda extends AppCompatActivity {
         setContentView(R.layout.activity_boveda);
     }
 
-
+    public void onRegresarClick(View view) {
+        // Iniciar la actividad del menú principal
+        Intent intent = new Intent(this, Menu.class);
+        startActivity(intent);
+    }
     public void toggleLogBoveda_Abrir(View view) {
         mqttHandler = new MqttHandler();
         mqttHandler.connect(BROKER_URL, CLIENT_ID);
