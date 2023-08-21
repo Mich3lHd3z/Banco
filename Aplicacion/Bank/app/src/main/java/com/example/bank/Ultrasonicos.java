@@ -74,7 +74,6 @@ public class Ultrasonicos extends AppCompatActivity {
         _Insert("U_PL_A","Ultra Cerrada");
     }
     private void _Insert(final String _Clave, final String _Descripcion) {
-
         String url = "https://proyectos123tra.000webhostapp.com/Banco/api.php";
 
         JSONObject jsonBody = new JSONObject();
