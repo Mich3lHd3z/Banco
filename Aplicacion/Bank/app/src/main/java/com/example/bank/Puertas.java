@@ -6,7 +6,22 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
+import com.android.volley.*;
+import com.android.volley.toolbox.*;
+import org.json.*;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
+import java.util.HashMap;
+import java.util.Map;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -131,44 +146,41 @@ public class Puertas extends AppCompatActivity {
         _Insert("P_S_C","Puerta Cerrada");
     }
     private void _Insert(final String _Clave, final String _Descripcion) {
-
         String url = "https://proyectos123tra.000webhostapp.com/Banco/api.php";
 
-        JSONObject jsonBody = new JSONObject();
-        try {
-            jsonBody.put("Clave", _Clave);
-            jsonBody.put("Descripcion", _Descripcion);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, jsonBody,
-                new Response.Listener<JSONObject>() {
+        Map<String, String> params = new HashMap<>();
+        params.put("Clave", _Clave);
+        params.put("Descripcion", _Descripcion);
+
+        insertar_base(url, params);
+    }
+
+    private void insertar_base(String url, final Map<String, String> params) {
+        StringRequest stringrequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
                     @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            boolean success = response.getBoolean("success");
-                            String message = response.getString("message");
-                            if (success) {
-                                // La inserción fue exitosa
-                                Toast.makeText(Puertas.this, "Registro exitoso: " + message, Toast.LENGTH_LONG).show();
-                            } else {
-                                // Hubo un error en la inserción
-                                Toast.makeText(Puertas.this, "Error en el registro: " + message, Toast.LENGTH_LONG).show();
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                    public void onResponse(String response) {
+                        Toast.makeText(Puertas.this, response, Toast.LENGTH_LONG).show();
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(Puertas.this, "Error al guardar el producto: " + error.getMessage(), Toast.LENGTH_LONG).show();
                         Log.e("Error", error.toString());
                     }
-                });
+                }
+        ) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                return params;
+            }
+        };
 
-        Volley.newRequestQueue(this).add(jsonObjectRequest);
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringrequest);
     }
+
 
 
     @Override
