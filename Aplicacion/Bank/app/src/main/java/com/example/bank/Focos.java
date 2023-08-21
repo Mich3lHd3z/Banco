@@ -29,9 +29,10 @@ public class Focos extends AppCompatActivity {
     }
 
     public void onRegresarClick(View view) {
-        finish();
+        // Iniciar la actividad del menú principal
+        Intent intent = new Intent(this, Menu.class);
+        startActivity(intent);
     }
-
     // Agrega aquí los métodos toggleFocoPrincipal, toggleFocoVentanilla, toggleFocoPasillo, toggleFocoPoste si los tienes implementados
 
 
@@ -126,13 +127,13 @@ public class Focos extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(Boveda.this, response, Toast.LENGTH_LONG).show();
+                        Toast.makeText(Focos.this, response, Toast.LENGTH_LONG).show();
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(Boveda.this, "Error al guardar el producto: " + error.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(Focos.this, "Error al guardar el producto: " + error.getMessage(), Toast.LENGTH_LONG).show();
                         Log.e("Error", error.toString());
                     }
                 }
